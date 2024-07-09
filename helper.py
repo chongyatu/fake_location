@@ -7,7 +7,7 @@ if not token:
     print("请配置TOKEN环境变量")
     exit(-1)
 urls = [
-    "http://k8n.cn/student/course/90621/punchs",
+    "http://k8n.cn/student/course/90625/punchs",
     "http://k8n.cn"
 ]
 headers = {
