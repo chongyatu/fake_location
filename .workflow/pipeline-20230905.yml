@@ -1,0 +1,39 @@
+version: '1.0'
+name: pipeline-20230905
+displayName: pipeline-20230905
+triggers:
+  trigger: auto
+  push:
+    branches:
+      prefix:
+        - ''
+  schedule:
+    - cron: '* 54 20 * * ? *'
+variables:
+  global:
+    - token
+  class: '90621'
+stages:
+  - name: stage-79dec352
+    displayName: 未命名
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: ut@python
+        name: unit_test_python
+        displayName: Python 单元测试
+        pythonVersion: '3.8'
+        commands:
+          - '# Python单元测试默认命令'
+          - export TOKEN=${token}
+          - pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+          - python ./helper.py
+        report:
+          path: report
+          index: index.html
+        checkpoints: []
+        caches: []
+        notify: []
+        strategy:
+          retry: '0'
