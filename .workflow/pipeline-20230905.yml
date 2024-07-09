@@ -8,11 +8,11 @@ triggers:
       prefix:
         - ''
   schedule:
-    - cron: '* 54 20 * * ? *'
+    - cron: '* 55 20 * * ? *'
 variables:
   global:
     - token
-  class: '90621'
+  class: '90625'
 stages:
   - name: stage-79dec352
     displayName: 未命名
